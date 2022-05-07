@@ -6,7 +6,7 @@ import { taskService } from '../../services/tasksService';
 class UsersController {
   async get(req: Request, res: Response) {
     const orderBy = req.query.orderBy as tasksOrderBy;
-    const direction = req.query.orderBy as orderDirection;
+    const direction = req.query.direction as orderDirection;
     const limit = Number(req.query.limit) || 3;
     const offset = Number(req.query.offset) || 0;
 
