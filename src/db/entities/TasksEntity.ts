@@ -1,11 +1,12 @@
 import { Sequelize, Model, DataTypes } from 'sequelize';
+import { statusTasks } from '../../constants';
 
 export interface TaskAttributes {
   id: string;
   userName: string;
   email: string;
   description: string;
-  status: string;
+  status?: string;
 }
 
 export class TasksEntity extends Model<TaskAttributes> implements TaskAttributes {
@@ -44,6 +45,7 @@ export const init = (sequelize: Sequelize) => {
       },
       status: {
         type: DataTypes.STRING,
+        defaultValue: statusTasks.created,
         allowNull: false,
       },
     },
