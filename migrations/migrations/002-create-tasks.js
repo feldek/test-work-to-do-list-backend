@@ -25,6 +25,10 @@ module.exports = {
           type: DataTypes.STRING,
           allowNull: false,
         },
+        edited: {
+          type: DataTypes.BOOLEAN,
+          allowNull: true,
+        },
         description: {
           type: DataTypes.STRING,
           allowNull: false,

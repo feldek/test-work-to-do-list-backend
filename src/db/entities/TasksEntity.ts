@@ -6,6 +6,7 @@ export interface TaskAttributes {
   userName: string;
   email: string;
   description: string;
+  edited?: boolean | null;
   status?: string;
 }
 
@@ -14,6 +15,7 @@ export class TasksEntity extends Model<TaskAttributes> implements TaskAttributes
   userName!: string;
   email!: string;
   description!: string;
+  edited!: boolean;
   status!: string;
 }
 
@@ -42,6 +44,10 @@ export const init = (sequelize: Sequelize) => {
       description: {
         type: DataTypes.STRING,
         allowNull: false,
+      },
+      edited: {
+        type: DataTypes.BOOLEAN,
+        allowNull: true,
       },
       status: {
         type: DataTypes.STRING,

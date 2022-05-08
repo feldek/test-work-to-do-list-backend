@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "build": "tsc",
-    "prestart": "npm i && tsc && npm run db:migrate",
+    "prestart": "npm i --production=false && tsc && npm run db:migrate",
     "start": "node dist/index.js",
     "dev": "nodemon src/index.ts",
     "compose": "docker-compose up",

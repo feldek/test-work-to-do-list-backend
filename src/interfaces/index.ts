@@ -5,5 +5,6 @@ export interface ITasks {
   userName: string;
   email: string;
   description: string;
+  edited?: boolean | null;
   status?: statusTasks;
 }

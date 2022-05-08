@@ -22,7 +22,7 @@ class UsersController {
     const { id, userName, email, description } = req.body;
     try {
       await taskService.create({ id, userName, email, description });
-      res.status(201);
+      res.status(201).json();
     } catch (error) {
       responseError(res, error);
     }
@@ -33,7 +33,7 @@ class UsersController {
     const params = { userName, email, description, status };
     try {
       await taskService.update(id, params);
-      res.status(201);
+      res.status(201).json();
     } catch (error) {
       responseError(res, error);
     }
@@ -43,7 +43,7 @@ class UsersController {
     const { id } = req.body;
     try {
       await taskService.remove(id);
-      res.status(201);
+      res.status(201).json();
     } catch (error) {
       responseError(res, error);
     }

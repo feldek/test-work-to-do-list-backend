@@ -3,7 +3,7 @@ import { Response, NextFunction, Request } from 'express';
 
 export const adminMiddleware = async (req: Request, res: Response, next: NextFunction) => {
   const authHeader = req.headers;
-  const token = authHeader.authorization && authHeader.authorization.split(' ')[1];
+  const token = authHeader.authorization;
 
   if (!token) {
     throw new Error('Token not exist');
