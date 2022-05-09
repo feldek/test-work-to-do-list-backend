@@ -1,6 +1,6 @@
 import { dbContext } from './db/dbContext';
 import app from './server';
-
+require('dotenv').config();
 const port = process.env.PORT || 8000;
 
 Promise.all([dbContext.connect()])
