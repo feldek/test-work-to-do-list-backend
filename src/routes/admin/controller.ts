@@ -7,7 +7,7 @@ class UsersController {
     try {
       const login = req.body.login as string;
       const password = req.body.password as string;
-      if (login !== 'admin' && password !== '123') {
+      if (login !== 'admin' || password !== '123') {
         throw new Error('Incorrect access details');
       }
 
