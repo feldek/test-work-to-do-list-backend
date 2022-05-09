@@ -1,5 +1,6 @@
 # Test task BeeJee
 
+url: https://test-work-to-do-list-backend.herokuapp.com/
 ## Setup development
 
 Prerequisites:
@@ -16,7 +17,7 @@ npm i
 
 cp .env.sample .env
 
-# running server and its services
+# running server and services
 npm run compose or sudo docker-compose up
 
 npm run db:create
