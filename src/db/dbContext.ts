@@ -11,6 +11,12 @@ class DbContext {
       host: settings.host,
       port: settings.port,
       dialect: settings.dialect,
+      dialectOptions: {
+        ssl: {
+          require: true,
+          rejectUnauthorized: false,
+        },
+      },
     });
     InitEntities.init(this.sequelize);
   }
