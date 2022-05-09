@@ -10,8 +10,7 @@ Prerequisites:
 
 ```
 # cloning repo
-git clone https://github.com/feldek/...
-cd test-beejee-backend
+git clone https://github.com/feldek/test-work-to-do-list-backend
 
 npm i
 
