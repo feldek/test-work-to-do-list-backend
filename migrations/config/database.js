@@ -12,4 +12,10 @@ module.exports = {
   port: process.env.DB_PORT,
   dialect: 'postgres',
   migrationStorageTableName: 'SequelizeMetaBeeJeeDb',
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false,
+    },
+  },
 };
