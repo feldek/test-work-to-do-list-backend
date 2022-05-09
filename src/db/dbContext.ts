@@ -4,6 +4,17 @@ import { InitEntities } from './initEntities';
 
 class DbContext {
   public sequelize: Sequelize;
+  private sslConfig =
+    process.env.NODE_ENV === 'production'
+      ? {
+          dialectOptions: {
+            ssl: {
+              require: true,
+              rejectUnauthorized: false,
+            },
+          },
+        }
+      : undefined;
 
   constructor() {
     const settings = settingsProvider.getDatabaseSettings();
@@ -11,12 +22,7 @@ class DbContext {
       host: settings.host,
       port: settings.port,
       dialect: settings.dialect,
-      dialectOptions: {
-        ssl: {
-          require: true,
-          rejectUnauthorized: false,
-        },
-      },
+      ...this.sslConfig,
     });
     InitEntities.init(this.sequelize);
   }
